@@ -136,3 +136,4 @@ Songbird/
 **Version**: 1.1.0  
 **COVAS NEXT**: https://ratherrude.github.io/Elite-Dangerous-AI-Integration/  
 **Freesound API**: https://freesound.org/
+**License**: MIT
