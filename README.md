@@ -23,25 +23,33 @@ Voice-controlled sound effects for COVAS NEXT. Play sounds from Freesound, manag
 ### 2. Install Plugin
 
 1. Place the `Songbird` folder in: `%appdata%\com.covas-next.ui\plugins\`
+
 2. Create `api_key.txt` in the plugin folder and paste your API key (no quotes, just the key)
+
 3. Restart COVAS NEXT
+
 4. Test with: "Test SONGBIRD plugin"
 
 ## Voice Commands
 
 ### Playing Sounds
 
+```
 "Play explosion sound"
 "Play another explosion"
 "Play it again"
 "Play [your filename]"
+```
 
 ### Playback Control
+
+```
 "Stop sound"
 "Pause sound" / "Resume sound"
 "Volume up" / "Volume down"
 "Set volume to 50%"
 "Mute" / "Unmute"
+```
 
 ### Binding System
 
@@ -58,7 +66,7 @@ Voice-controlled sound effects for COVAS NEXT. Play sounds from Freesound, manag
 "List bound sounds"
 "Unbind kaboom"
 "Unbind all sounds"
-
+```
 
 Bindings are stored in `bound_sounds.json` and work with punctuation/case variations.
 
@@ -128,4 +136,3 @@ Songbird/
 **Version**: 1.1.0  
 **COVAS NEXT**: https://ratherrude.github.io/Elite-Dangerous-AI-Integration/  
 **Freesound API**: https://freesound.org/
-**License**: MIT
