@@ -1,0 +1,47 @@
+SONGBIRD PLUGIN - ADVANCED USAGE PATTERNS
+==========================================
+
+These procedures describe creative ways to use the SONGBIRD plugin in combination with COVAS's conversational memory. These are usage patterns, not built-in plugin features. The plugin provides the sound playback and binding infrastructure; COVAS's conversational memory implements the logic.
+
+NOTE: Procedures 1-3 rely on COVAS's session memory and will need to be re-instructed after a full COVAS restart. Procedures 4-7 are built into the plugin and persist permanently.
+
+1. Login Procedure: Await the designated greeting phrase (e.g., "________") to initiate; if the phrase or sounds are not set, prompt the user immediately to provide them before proceeding; upon correct phrase, request the password (e.g., "________"); verify password and respond with varied greetings confirming access if correct, playing a notification sound if specified (e.g., "________"); if incorrect, play denial sound if specified (e.g., "________") and refuse access; enforce this process every time the phrase is received; avoid prompting on other mentions; never confirm login without successful password check.
+
+2. Logout Procedure: Await the designated logout phrase or command (e.g., "________") to initiate; if the phrase or sounds are not set, prompt the user immediately to provide them before proceeding; upon receiving correct logout phrase, play logout notification sound if specified (e.g., "________"); respond with varied farewell confirming session closure; clear session authentication; ignore further commands until login completes anew; ensure logout only triggers on explicit command to prevent mistakes.
+
+3. Sound Playback Procedure: Await a specific user-designated action (e.g., landing, entering new system) to trigger; if the action phrase or corresponding sound is not set, prompt the user immediately to provide them before proceeding; upon detecting the specified action phrase, play the associated notification sound as specified (e.g., "________"); allow the user to update or change action-sound pairings at any time; ensure sounds only play on explicit matching of the action phrase to prevent false triggers.
+
+4. Sound Binding Procedure: Await user command to associate a specific sound with a custom voice command phrase; if the phrase or sound is not specified, prompt the user immediately to provide them before proceeding; upon receiving proper command and inputs, bind the sound to the phrase for future replay; confirm binding with varied acknowledgments; allow updating or removing bindings upon user request; ensure each phrase uniquely triggers its bound sound to prevent conflicts.
+
+5. Sound Replay Procedure: Await user command containing a previously bound voice command phrase; if the phrase is not recognized or unbound, inform the user and prompt for correct phrase or to create a new binding; upon recognizing the bound phrase, play the associated sound promptly; allow repeated replay requests with varied confirmations; ensure playback controls such as pause, resume, stop, and volume adjustments respond to user commands during playback.
+
+6. Sound Listing Procedure: Upon user request, retrieve and present a list of all currently bound voice command phrases and their associated sounds; if no bindings exist, inform the user accordingly; allow the user to request detailed information or play any listed sound directly from the list; provide clear instructions for managing bindings, including adding, updating, or removing entries.
+
+7. Sound Volume Control Procedure: Await user voice commands to adjust audio playback volume, including increasing, decreasing, muting, unmuting, or setting a specific volume level; if the command is unclear or volume value out of range, prompt the user for clarification or valid input; confirm the volume change with varied acknowledgments; apply changes immediately to the current or future sound playbacks to enhance user audio experience.
+
+USAGE EXAMPLES
+--------------
+
+Example 1: Login System
+- Tell COVAS: "When I say 'Hello COVAS', ask me for the password. The password is 'Blue sky green sky'. If correct, play a welcome sound and greet me. If incorrect, play a denial sound."
+- COVAS will remember this within the session and implement the logic
+- Bind specific sounds to make the experience complete
+
+Example 2: Action-Triggered Sounds
+- Tell COVAS: "When I say 'Docking complete', play a docking sound"
+- Bind a specific sound to "docking complete" using the plugin
+- COVAS will recognize the phrase and trigger the bound sound
+
+Example 3: Custom Command with Response
+- Play a sound you like
+- Say: "Bind this to 'morning briefing'"
+- Tell COVAS: "When I say 'morning briefing', play the sound and then give me a news summary"
+- COVAS will remember the custom response within the session
+
+IMPORTANT NOTES
+---------------
+- Procedures 1-3 are creative usage patterns requiring COVAS instructions
+- Procedures 4-7 are actual plugin features that persist permanently
+- Login/logout logic exists only in COVAS's session memory
+- Sound bindings exist in the plugin and survive restarts
+- To make login/logout permanent, add instructions to COVAS's system prompt/backstory
